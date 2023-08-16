@@ -10,6 +10,11 @@
       v-model="password"
     />
     <button v-on:click="signUp()">Sign Up</button>
+    <p>
+      <router-link to="/login"
+        >Already a user? Click here to log in</router-link
+      >
+    </p>
   </div>
 </template>
 <script>
@@ -41,34 +46,11 @@ export default {
       }
     },
   },
-  mounted(){
+  mounted() {
     let user = localStorage.getItem("user-info");
-    if(user){
-      this.$router.push({name:"Home"})
+    if (user) {
+      this.$router.push({ name: "Home" });
     }
-  }
+  },
 };
 </script>
-<style scoped>
-.logo {
-  width: 100px;
-}
-.resgister input {
-  width: 300px;
-  height: 40px;
-  padding-left: 20px;
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
-  border: 1px solid green;
-}
-.resgister button {
-  width: 325px;
-  height: 40px;
-  color: red;
-  background-color: skyblue;
-  border: none;
-  box-shadow: 10px 5px 5px red;
-  cursor: pointer;
-}
-</style>
