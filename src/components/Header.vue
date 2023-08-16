@@ -3,7 +3,7 @@
     <a href="home">Home</a>
     <a href="home">Add Restaurant</a>
     <a href="home">Update Restaurant</a>
-    <a href="home">Logout</a>
+    <a v-on:click="logout" href="#">Logout</a>
   </div>
 </template>
 <script>
@@ -12,6 +12,14 @@ export default {
   data() {
     return {};
   },
+  methods:{
+    logout(){
+      // delete the storage from local storage
+      localStorage.clear();
+      // redirect to login page
+      this.$router.push({name:"Login"})
+    }
+  }
 };
 </script>
 <style scoped>
