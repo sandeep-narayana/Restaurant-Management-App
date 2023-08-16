@@ -3,8 +3,12 @@
   <h1>Sign Up</h1>
   <div class="resgister">
     <input type="text" placeholder="Enter your Name" v-model="name" />
-    <input type="email" placeholder="Enter your Email" v-model="email"/>
-    <input type="password" placeholder="Enter your Password" v-model="password"/>
+    <input type="email" placeholder="Enter your Email" v-model="email" />
+    <input
+      type="password"
+      placeholder="Enter your Password"
+      v-model="password"
+    />
     <button v-on:click="signUp()">Sign Up</button>
   </div>
 </template>
@@ -12,29 +16,35 @@
 import axios from "axios";
 export default {
   name: "SignUp",
-  data(){
-    return{
-        name:"",
-        email:"",
-        password:""
-    }
+  data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+    };
   },
-  methods:{
-    async signUp()
-    {
-        // call api after istalling axios
-        var result = await axios.post("http://localhost:3000/users",{
-            name:this.name,
-            email:this.email,
-            password:this.password
-        })
-        if(result.status===201){
-            // if success redirect to home page
-            this.$router.push({name:"Home"});
-        }
+  methods: {
+    async signUp() {
+      // call api after istalling axios
+      var result = await axios.post("http://localhost:3000/users", {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+      });
 
-        // store in localstorage so it can be used further
-        localStorage.setItem("user-info",result.data)
+      // store in localstorage so it can be used further
+      localStorage.setItem("user-info", JSON.stringify(result.data));
+
+      if (result.status === 201) {
+        // if success redirect to home page
+        this.$router.push({ name: "Home" });
+      }
+    },
+  },
+  mounted(){
+    let user = localStorage.getItem("user-info");
+    if(user){
+      this.$router.push({name:"Home"})
     }
   }
 };
@@ -53,12 +63,12 @@ export default {
   border: 1px solid green;
 }
 .resgister button {
-    width: 325px;
-    height: 40px;
-    color: red;
-    background-color: skyblue;
-    border: none;
-    box-shadow: 10px 5px 5px red;
-    cursor: pointer;
+  width: 325px;
+  height: 40px;
+  color: red;
+  background-color: skyblue;
+  border: none;
+  box-shadow: 10px 5px 5px red;
+  cursor: pointer;
 }
 </style>

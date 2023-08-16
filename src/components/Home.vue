@@ -7,8 +7,12 @@ export default {
   data() {
     return {};
   },
-  methods:{
-    
-  }
+  methods: {},
+  mounted() {
+    let user = localStorage.getItem("user-info");
+    if (!user) {
+      this.$router.push({ name: "SignUp" });
+    }
+  },
 };
 </script>
