@@ -26,7 +26,8 @@ export default {
   height: 40px;
   padding-left: 20px;
   display: block;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
   border: 1px solid green;
 }

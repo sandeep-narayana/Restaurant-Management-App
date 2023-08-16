@@ -1,7 +1,9 @@
 <template>
+<Header/>
   <h1>Hello , Welcome on Home Page</h1>
 </template>
 <script>
+import Header from "./Header.vue"
 export default {
   name: "HomeC",
   data() {
@@ -14,5 +16,8 @@ export default {
       this.$router.push({ name: "SignUp" });
     }
   },
+  components:{
+    Header
+  }
 };
 </script>
