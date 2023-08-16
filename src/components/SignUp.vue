@@ -31,6 +31,9 @@ export default {
         if(result.status===201){
             alert("Signup Done");
         }
+
+        // store in localstorage so it can be used further
+        localStorage.setItem("user-info",result.data)
     }
   }
 };
