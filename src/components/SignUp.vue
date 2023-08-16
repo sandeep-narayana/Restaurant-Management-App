@@ -29,7 +29,8 @@ export default {
             password:this.password
         })
         if(result.status===201){
-            alert("Signup Done");
+            // if success redirect to home page
+            this.$router.push({name:"Home"});
         }
 
         // store in localstorage so it can be used further

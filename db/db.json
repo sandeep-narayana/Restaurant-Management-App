@@ -29,6 +29,24 @@
       "email": "san@gmail",
       "password": "san@123",
       "id": 5
+    },
+    {
+      "name": "Peter",
+      "email": "Peter@gmail.com",
+      "password": "peter@12345",
+      "id": 6
+    },
+    {
+      "name": "rao",
+      "email": "rao@gmail.com",
+      "password": "rao@12345",
+      "id": 7
+    },
+    {
+      "name": "d",
+      "email": "d",
+      "password": "df",
+      "id": 8
     }
   ]
 }
