@@ -9,6 +9,8 @@
         <th>Name</th>
         <th>Address</th>
         <th>Contact</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +19,12 @@
         <td>{{ item.name }}</td>
         <td>{{ item.address }}</td>
         <td>{{ item.contact }}</td>
+        <td>
+          <router-link :to="'/update-restaurant/'+item.id">
+            Update</router-link
+          >
+        </td>
+        <td><router-link to="/update-restaurant"> Delete</router-link></td>
       </tr>
     </tbody>
   </table>
@@ -56,11 +64,10 @@ export default {
   border-collapse: collapse;
   border: 1px solid #ccc;
   margin-top: 20px;
-  
 }
 
 /* Style for table header */
-.restaurant-table th  {
+.restaurant-table th {
   background-color: #f2f2f2;
   padding: 10px;
   text-align: left;
