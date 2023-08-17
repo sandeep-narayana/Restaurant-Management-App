@@ -61,30 +61,5 @@
       "id": 10
     }
   ],
-  "restaurants": [
-    {
-      "name": "KFC",
-      "address": "Noida",
-      "contact": "1111",
-      "id": 1
-    },
-    {
-      "name": "Burger Kind",
-      "address": "Noida",
-      "contact": "2222",
-      "id": 2
-    },
-    {
-      "name": " Kings Land",
-      "address": "Noida",
-      "contact": "3333",
-      "id": 3
-    },
-    {
-      "name": "kabali restraunt",
-      "address": "kulu kabali",
-      "contact": "8899",
-      "id": 4
-    }
-  ]
+  "restaurants": []
 }

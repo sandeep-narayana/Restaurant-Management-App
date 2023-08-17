@@ -53,15 +53,23 @@ export default {
   },
   async mounted() {
     //show the prefill form for easy update
-     const restaurantId = this.$route.params.id;
-    var existingRestaurant = await axios.get(`http://localhost:3000/restaurants/${restaurantId}`)
-    this.restaurant = existingRestaurant
+    const restaurantId = this.$route.params.id;
+    var existingRestaurant = await axios.get(
+      `http://localhost:3000/restaurants/${restaurantId}`
+    );
+    this.restaurant = existingRestaurant.data;
   },
   components: {
     Header,
   },
   methods: {
     async updateRestaurant() {
+      const restaurantId = this.$route.params.id;
+      var res = await axios.put(`http://localhost:3000/restaurants/${restaurantId}`,this.restaurant);
+      if(res!=null){
+        alert("Update successful")
+      }
+
     },
   },
 };
